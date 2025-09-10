@@ -12,6 +12,8 @@ import Register from "./components/Register/Register";
 import { ToastContainer } from "react-toastify";
 import MyOrders from "./pages/MyOrders/MyOrders";
 import { StoreContext } from "./context/StoreContext";
+import "bootstrap-icons/font/bootstrap-icons.css";  // Import Bootstrap Icons
+
 
 const App = () => {
   const { token } = useContext(StoreContext);

@@ -1,0 +1,145 @@
+/* Card Styling */
+.food-card {
+    border: none;
+    border-radius: 15px;
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
+    transition: all 0.3s ease-in-out;
+    overflow: hidden;
+    background-color: #fff;
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    text-align: center;
+    position: relative;
+}
+
+.food-card:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 12px 30px rgba(0, 0, 0, 0.15);
+}
+
+/* Image Styling */
+.food-card-image-container {
+    width: 100%;
+    height: 220px;
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.food-card-image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-top-left-radius: 15px;
+    border-top-right-radius: 15px;
+    transition: transform 0.4s ease;
+}
+
+.food-card:hover .food-card-image {
+    transform: scale(1.08);
+}
+
+/* Food Details */
+.food-card-body {
+    padding: 15px;
+}
+
+.food-card-title {
+    font-size: 1.1rem;
+    font-weight: 600;
+    color: #333;
+    margin-bottom: 8px;
+}
+
+.food-card-price {
+    font-size: 1.2rem;
+    font-weight: 700;
+    color: #0d6efd;
+    margin-bottom: 12px;
+}
+
+/* Footer Styling */
+.food-card-footer {
+    padding: 12px 15px;
+    border-top: 1px solid #f0f0f0;
+    background-color: #fff;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+/* View Details Button */
+.btn-view-details {
+    background-color: transparent;
+    border: 1.5px solid #0d6efd;
+    color: #0d6efd;
+    padding: 6px 14px;
+    border-radius: 6px;
+    font-weight: 500;
+    transition: all 0.3s ease;
+}
+
+.btn-view-details:hover {
+    background-color: #0d6efd;
+    color: white;
+}
+
+/* Add to Cart Button - Footer */
+.btn-add-to-cart-footer {
+    background-color: #0d6efd;
+    color: white;
+    border: none;
+    border-radius: 6px;
+    padding: 6px 14px;
+    font-weight: 600;
+    font-size: 0.9rem;
+    box-shadow: 0 3px 10px rgba(0, 0, 0, 0.15);
+    transition: all 0.3s ease-in-out;
+}
+
+.btn-add-to-cart-footer:hover {
+    background-color: #084ed1;
+    transform: scale(1.05);
+}
+
+/* Quantity Control - Footer */
+.quantity-control-footer {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    background-color: #f8f9fa;
+    border-radius: 25px;
+    padding: 5px 10px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.08);
+}
+
+.quantity-control-footer button {
+    border: none;
+    background-color: #e9ecef;
+    width: 30px;
+    height: 30px;
+    cursor: pointer;
+    font-size: 1.1rem;
+    color: #333;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 50%;
+    transition: all 0.3s ease;
+}
+
+.quantity-control-footer button:hover {
+    background-color: #d6d6d6;
+}
+
+.btn-quantity-increase {
+    background-color: #0d6efd !important;
+    color: white !important;
+}
+
+.item-count {
+    font-weight: 600;
+    font-size: 1rem;
+}
