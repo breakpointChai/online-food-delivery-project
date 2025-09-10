@@ -9,6 +9,7 @@ import Cart from "./pages/Cart/Cart";
 import PlaceOrder from "./pages/PlaceOrder/PlaceOrder";
 import Login from "./components/Login/Login";
 import Register from "./components/Register/Register";
+import ChefAI from "./pages/ChefAI/ChefAI";
 import { ToastContainer } from "react-toastify";
 import MyOrders from "./pages/MyOrders/MyOrders";
 import { StoreContext } from "./context/StoreContext";
@@ -31,6 +32,7 @@ const App = () => {
         <Route path="/login" element={token ? <Home /> : <Login />} />
         <Route path="/register" element={token ? <Home /> : <Register />} />
         <Route path="/myorders" element={token ? <MyOrders /> : <Login />} />
+        <Route path="/chefai" element={token ? <ChefAI /> : <Login />} />
       </Routes>
     </div>
   );

@@ -1,7 +1,7 @@
-import React, { useContext } from 'react';
-import { Link } from 'react-router-dom';
-import { StoreContext } from '../../context/StoreContext';
-import './FoodItem.css';
+import React, { useContext } from "react";
+import { Link } from "react-router-dom";
+import { StoreContext } from "../../context/StoreContext";
+import './FoodItem.css'; // Make sure to import the CSS
 
 const FoodItem = ({ name, id, imageUrl, price }) => {
   const { increaseQty, decreaseQty, quantities } = useContext(StoreContext);
@@ -9,46 +9,40 @@ const FoodItem = ({ name, id, imageUrl, price }) => {
 
   return (
     <div className="col-lg-3 col-md-4 col-sm-6 mb-4">
-      <div className="food-card">
-        {/* Image Section */}
-        <div className="food-card-image-container">
-          <Link to={`/food/${id}`}>
-            <img src={imageUrl} className="food-card-image" alt={name} />
-          </Link>
+      <div className="food-item-card">
+        <Link to={`/food/${id}`}>
+          <img
+            src={imageUrl}
+            className="card-img-top"
+            alt={name}
+          />
+        </Link>
+        <div className="food-item-body text-center">
+          <h5 className="food-item-title">{name}</h5>
+          <p className="food-item-price">&#8377;{price}</p>
         </div>
-
-        {/* Food Details */}
-        <div className="food-card-body text-center">
-          <h5 className="food-card-title">{name}</h5>
-          <p className="food-card-price">&#8377;{price}</p>
-        </div>
-
-        {/* Footer Section */}
-        <div className="food-card-footer d-flex justify-content-between align-items-center">
-          {/* View Details Button */}
-          <Link className="btn-view-details" to={`/food/${id}`}>
-            View Food
+        <div className="food-item-footer">
+          <Link className="btn btn-outline-primary btn-sm" to={`/food/${id}`}>
+            View Details
           </Link>
-
-          {/* Add to Cart / Quantity Control */}
           {itemCount === 0 ? (
             <button
-              className="btn-add-to-cart-footer"
+              className="btn btn-primary btn-sm"
               onClick={() => increaseQty(id)}
             >
-              <i className="bi bi-cart-plus me-1"></i> Add
+              <i className="bi bi-cart-plus"></i> Add
             </button>
           ) : (
-            <div className="quantity-control-footer">
+            <div className="quantity-stepper">
               <button
-                className="btn-quantity-decrease"
+                className="btn btn-outline-danger btn-sm"
                 onClick={() => decreaseQty(id)}
               >
                 <i className="bi bi-dash"></i>
               </button>
               <span className="item-count">{itemCount}</span>
               <button
-                className="btn-quantity-increase"
+                className="btn btn-outline-success btn-sm"
                 onClick={() => increaseQty(id)}
               >
                 <i className="bi bi-plus"></i>
@@ -62,8 +56,6 @@ const FoodItem = ({ name, id, imageUrl, price }) => {
 };
 
 export default FoodItem;
-
-
 
 
 

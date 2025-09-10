@@ -79,6 +79,19 @@ const Menubar = () => {
                 Contact us
               </Link>
             </li>
+                        
+            <li className="nav-item">
+              <Link
+                className={
+                  active === "chefai" ? "nav-link fw-bold active" : "nav-link"
+                }
+                to="/chefai"
+                onClick={() => setActive("chefai")}
+              >
+                ChefAI
+              </Link>
+            </li>
+
           </ul>
           <div className="d-flex align-items-center gap-4">
             <Link to={`/cart`}>
