@@ -7,6 +7,8 @@ import lombok.NoArgsConstructor;
 import org.springframework.data.annotation.Id;
 import org.springframework.data.mongodb.core.mapping.Document;
 
+import java.util.List;
+
 @Data
 @Builder
 @AllArgsConstructor
@@ -20,4 +22,6 @@ public class FoodEntity {
     private double price;
     private String category;
     private String imageUrl;
+    private List<String> tags;      // <-- Add this line
+    private List<String> keywords;  // <-- Add this line
 }
