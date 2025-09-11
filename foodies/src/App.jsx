@@ -14,6 +14,7 @@ import { ToastContainer } from "react-toastify";
 import MyOrders from "./pages/MyOrders/MyOrders";
 import { StoreContext } from "./context/StoreContext";
 import "bootstrap-icons/font/bootstrap-icons.css";  // Import Bootstrap Icons
+import ProtectedRoute from "./components/ProtectedRoute"; // Import ProtectedRoute
 
 
 const App = () => {
@@ -32,7 +33,12 @@ const App = () => {
         <Route path="/login" element={token ? <Home /> : <Login />} />
         <Route path="/register" element={token ? <Home /> : <Register />} />
         <Route path="/myorders" element={token ? <MyOrders /> : <Login />} />
-        <Route path="/chefai" element={token ? <ChefAI /> : <Login />} />
+        {/* <Route path="/chefai" element={token ? <ChefAI /> : <Login />} /> */}
+        {/* Protected Routes */}
+        <Route path="/order" element={<ProtectedRoute><PlaceOrder /></ProtectedRoute>} />
+        <Route path="/myorders" element={<ProtectedRoute><MyOrders /></ProtectedRoute>} />
+        <Route path="/chefai" element={<ProtectedRoute><ChefAI /></ProtectedRoute>} />
+   
       </Routes>
     </div>
   );
